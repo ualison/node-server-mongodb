@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+              <p class="navbar-text">CRUD/NodeJS/MONGODB - LISTAR USUÁRIOS</p>
+              <button type="button" class="btn btn-default navbar-btn"><a href="/">NOVO USUÁRIO</a></button>
+          </div>
+        </div>
+      </nav>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  
+  <title>CRUD/NodeJS/MONGODB - LISTAR USUÁRIO</title>
+
+</head>
+<body>
+        <div class="panel panel-default">
+                <div class="panel-heading">USUÁRIOS CADASTRADOS</div>
+                <table class="table">
+                        <thead>
+                                <tr>
+                                    <td>NOME</td>
+                                    <td>SOBRENOME</td>
+                                    <td>AÇÃO</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <% data.forEach(function(details) { %>
+                                <tr>
+                                    <td><%= details.name %></td>
+                                    <td><%= details.surname %></td>
+                                    <td><a href="/edit/<%= details._id %>">EDITAR</a>  /  <a href="/delete/<%= details._id %>">DELETAR</a></td>
+                                </tr>
+                                <% }) %>
+                            </tbody>
+                </table>
+            </div>
+    </body>
+</html>

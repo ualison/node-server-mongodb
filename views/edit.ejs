@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+              <p class="navbar-text">CRUD/NodeJS/MONGODB - EDITAR USUÁRIO</p>
+              <button type="button" class="btn btn-default navbar-btn"><a href="/show">USUÁRIOS CADASTRADOS</a></button>
+          </div>
+        </div>
+      </nav>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+  <title>CRUD/NodeJS/MONGODB - EDITAR USUÁRIO</title>
+  
+</head>
+<body>
+
+  <% data.forEach(function(details) { %>
+    <form action="/edit/<%= details._id %>" method="POST">
+      <input type="text" value="<%= details.name %>" name="name">
+      <input type="text" value="<%= details.surname %>" name="surname">
+      <button type="submit">Editar</button>
+    </form>
+  <% }) %>
+
+</body>
+</html>
